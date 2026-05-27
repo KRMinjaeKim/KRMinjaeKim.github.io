@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-Step</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+body {
+    font-family: 'Pretendard', '맑은 고딕', sans-serif; 
+    font-size: 100%;
+    color: #333333;
+    background-color: #fafafa;
+}
+[class*="c_"] {
+    float: left;
+    padding: 15px; 
+}
+/* 너비가 600픽셀 미만인 스마트폰을 위한 기본 설정 */
+[class*="c_"] {
+    width: 100%;
+}
+/* 너비가 600픽셀 이상인 태블릿 컴퓨터 등 */
+@media only screen and (min-width: 600px) {
+    .c_m_1 {width: 8.33%;}
+    .c_m_2 {width: 16.66%;}
+    .c_m_3 {width: 25%;}
+    .c_m_4 {width: 33.33%;}
+    .c_m_5 {width: 41.66%;}
+    .c_m_6 {width: 50%;}
+    .c_m_7 {width: 58.33%;}
+    .c_m_8 {width: 66.66%;}
+    .c_m_9 {width: 75%;}
+    .c_m_10 {width: 83.33%;}
+    .c_m_11 {width: 91.66%;}
+    .c_m_12 {width: 100%;}
+}
+/* 너비가 768픽셀을 초과하는 데스크톱 컴퓨터 등 */
+@media only screen and (min-width: 768px) {
+    .c_1 {width: 8.33%;}
+    .c_2 {width: 16.66%;}
+    .c_3 {width: 25%;}
+    .c_4 {width: 33.33%;}
+    .c_5 {width: 41.66%;}
+    .c_6 {width: 50%;}
+    .c_7 {width: 58.33%;}
+    .c_8 {width: 66.66%;}
+    .c_9 {width: 75%;}
+    .c_10 {width: 83.33%;}
+    .c_11 {width: 91.66%;}
+    .c_12 {width: 100%;}
+}
+
+header {
+    height: 90px;
+    padding: 0 20px;
+    background-color: #4A7C59; 
+    color: #ffffff;
+
+    display: flex;          
+    align-items: center;    
+    justify-content: flex-start; 
+}
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+aside#menu {
+    color: #2C3E50;
+}
+aside#menu li {
+    padding: 0; /* 링크 영역 확장을 위해 패딩 제거 */
+    margin: 8px 0 0 0;
+    background-color: #E9F5ED;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+aside#menu li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: inherit;
+}
+aside#menu li:hover {
+    background-color: #4A7C59;
+    color: #ffffff;
+}
+section#main {
+    padding: 20px;
+}
+section#main h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+section#main h2 {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin: 30px 0 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #E9F5ED;
+}
+section#main p {
+    padding: 8px 0;
+    font-size: 0.95em;
+    line-height: 165%;
+    color: #555555;
+}
+
+.intro-box {
+    background-color: #F8F9FA;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.timeline-container {
+    margin-top: 15px;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    border-left: 2px solid #4A7C59;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4A7C59;
+}
+.timeline-year {
+    font-weight: 700;
+    color: #4A7C59;
+    font-size: 0.95rem;
+}
+.timeline-desc {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-top: 2px;
+}
+
+.global-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.global-card {
+    background-color: #ffffff;
+    border: 1px solid #E1E1E1;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.global-card strong {
+    color: #2C3E50;
+    display: block;
+    margin-bottom: 6px;
+}
+.global-card p {
+    font-size: 0.85rem !important;
+    color: #666666 !important;
+    line-height: 145% !important;
+    padding: 0 !important;
+}
+
+aside#photos h4 {
+    font-size: 1.1rem;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+aside#photos img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+aside#photos li{
+    margin: 10px 0 0 0;
+}
+footer {
+    height: 70px;
+    padding: 25px 10px;
+    clear: both;
+    background-color: #ececec;
+    color: #777777;
+    font-size: 0.85rem;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <header class="c_12">
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">🏃🏻‍♂️ 플로깅! Eco-Step / 에코스텝</a></h1>
+    </header>
+
+    <aside id="menu" class="c_m_3 c_3">
+        <ul>
+            <li><a href="explain.html">플로깅이란?</a></li>
+            <li><a href="ready.html">필수 준비물</a></li>
+            <li><a href="course.html">추천 산책로</a></li>
+            <li><a href="facilities.html">편의시설</a></li>
+            <li><a href="gallery.html">활동 갤러리</a></li>
+        </ul>
+    </aside>
+
+    <section id="main" class="c_m_9 c_6">
+        <h1>플로깅 시작하기 ♻️</h1>
+        
+        <div class="intro-box">
+            <p style="padding: 0; font-weight: 600; color: #2C3E50; font-size: 1.05rem;">Plogging (플로깅)</p>
+            <p style="padding: 5px 0 0 0;">조깅을 하면서 길가의 쓰레기를 수거하는 활동으로, <strong>체육활동(Jogging)</strong>과 <strong>자연보호활동(Plocka Upp)</strong>이 합쳐진 개념을 의미하는 신조어입니다.</p>
+        </div>
+
+        <h2>플로깅의 발자취 👣</h2>
+        <p>글로벌 트렌드로 자리 잡은 플로깅이 국내에 정착하기까지의 여정입니다.</p>
+        
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-year">2016년 · 스웨덴에서 첫 시작</div>
+                <div class="timeline-desc">스웨덴어에서 '줍다'를 뜻하는 플로카 우프(Plocka Upp)와 조깅(Jogging)의 합성어로 시작되어 유럽 전역으로 화제가 되었습니다.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018년 · 대한민국 상륙</div>
+                <div class="timeline-desc">'쓰레기 줍는 조깅'의 줄임말인 순우리말 <strong>'줍깅'</strong>으로 번역되며 국내에 알려지기 시작했습니다.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">현재 · 트렌디한 환경 운동 정착</div>
+                <div class="timeline-desc">SNS 챌린지와 기업 및 지자체의 캠페인 후원을 통해 대중적인 웰니스 환경 문화로 자리 잡았습니다.</div>
+            </div>
+        </div>
+
+        <h2>글로벌 유사 활동 🌍</h2>
+        <p>자연을 지키며 운동하는 문화는 전 세계 다양한 형태로 이어지고 있습니다.</p>
+        
+        <div class="global-grid">
+            <div class="global-card">
+                <strong>⛰️ 클린 하이킹</strong>
+                <p>국내외에서 등산을 즐기며 산길에 버려진 쓰레기를 겸사겸사 수거하는 건강한 등산 문화입니다.</p>
+            </div>
+            <div class="global-card">
+                <strong>🗻 일본 후지산 캠페인</strong>
+                <p>관광객이 버린 쓰레기로 몸살을 앓던 등산로를 지역 주민들이 직접 걸으며 정화하는 활동입니다.</p>
+            </div>
+            <div class="global-card">
+                <strong>🧗 네팔 에베레스트</strong>
+                <p>의무적인 쓰레기 수거 규칙과 전문 수거 등반대를 편성하여 고산 지대 환경을 정화하는 프로젝트입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <aside id="photos" class="c_m_12 c_3">
+        <h4>포토 갤러리</h4>
+        <ul>
+            <li><img src="https://www.chosun.com/resizer/v2/IEOOXWAKJA6CKOAHKNGIXSCTT4.gif?auth=91ab6ac07cd5db35543efac537092d6d9185572cab13d81226fbfa6acda06c3d&width=616"></li>
+            <li><img src="https://www.docdocdoc.co.kr/news/photo/202304/3005068_3005619_4832.jpg"></li>
+            <li><img src="https://cdn.imweb.me/thumbnail/20240305/893496ef3cf09.jpeg"></li>
+        </ul>
+    </aside>
+
+    <footer class="c_12">
+        COPYRIGHT 2026 Eco-Step ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

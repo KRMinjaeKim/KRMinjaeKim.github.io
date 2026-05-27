@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-Step - 활동 갤러리</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+body {
+    font-family: 'Pretendard', '맑은 고딕', sans-serif; 
+    font-size: 100%;
+    color: #333333;
+    background-color: #fafafa;
+}
+[class*="c_"] {
+    float: left;
+    padding: 15px; 
+}
+/* 너비가 600픽셀 미만인 스마트폰을 위한 기본 설정 */
+[class*="c_"] {
+    width: 100%;
+}
+/* 너비가 600픽셀 이상인 태블릿 컴퓨터 등 */
+@media only screen and (min-width: 600px) {
+    .c_m_1 {width: 8.33%;}
+    .c_m_2 {width: 16.66%;}
+    .c_m_3 {width: 25%;}
+    .c_m_4 {width: 33.33%;}
+    .c_m_5 {width: 41.66%;}
+    .c_m_6 {width: 50%;}
+    .c_m_7 {width: 58.33%;}
+    .c_m_8 {width: 66.66%;}
+    .c_m_9 {width: 75%;}
+    .c_m_10 {width: 83.33%;}
+    .c_m_11 {width: 91.66%;}
+    .c_m_12 {width: 100%;}
+}
+/* 너비가 768픽셀을 초과하는 데스크톱 컴퓨터 등 */
+@media only screen and (min-width: 768px) {
+    .c_1 {width: 8.33%;}
+    .c_2 {width: 16.66%;}
+    .c_3 {width: 25%;}
+    .c_4 {width: 33.33%;}
+    .c_5 {width: 41.66%;}
+    .c_6 {width: 50%;}
+    .c_7 {width: 58.33%;}
+    .c_8 {width: 66.66%;}
+    .c_9 {width: 75%;}
+    .c_10 {width: 83.33%;}
+    .c_11 {width: 91.66%;}
+    .c_12 {width: 100%;}
+}
+
+header {
+    height: 90px;
+    padding: 0 20px;
+    background-color: #4A7C59; 
+    color: #ffffff;
+
+    display: flex;          
+    align-items: center;    
+    justify-content: flex-start; 
+}
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+aside#menu {
+    color: #2C3E50;
+}
+aside#menu li {
+    padding: 0;
+    margin: 8px 0 0 0;
+    background-color: #E9F5ED;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+aside#menu li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: inherit;
+}
+aside#menu li.active, aside#menu li:hover {
+    background-color: #4A7C59;
+    color: #ffffff;
+}
+section#main {
+    padding: 20px;
+}
+section#main h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+section#main p {
+    padding: 8px 0;
+    font-size: 0.95em;
+    line-height: 160%;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.upload-box {
+    background-color: #ffffff;
+    border: 2px dashed #4A7C59;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.upload-box label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4A7C59;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+.upload-box label:hover {
+    background-color: #386144;
+}
+.upload-box p {
+    font-size: 0.85rem !important;
+    color: #777777 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+.gallery-item {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #f0f0f0;
+}
+.gallery-info {
+    padding: 12px;
+}
+.gallery-author {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 4px;
+}
+.gallery-caption {
+    font-size: 0.8rem;
+    color: #666666;
+    line-height: 1.4;
+}
+
+footer {
+    height: 70px;
+    padding: 25px 10px;
+    clear: both;
+    background-color: #ececec;
+    color: #777777;
+    font-size: 0.85rem;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <header class="c_12">
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">🏃🏻‍♂️ 플로깅! Eco-Step / 에코스텝</a></h1>
+    </header>
+
+    <aside id="menu" class="c_m_3 c_3">
+        <ul>
+            <li><a href="explain.html">플로깅이란?</a></li>
+            <li><a href="ready.html">필수 준비물</a></li>
+            <li><a href="course.html">추천 산책로</a></li>
+            <li><a href="facilities.html">편의시설</a></li>
+            <li class="active"><a href="gallery.html">활동 갤러리</a></li>
+        </ul>
+    </aside>
+
+    <section id="main" class="c_m_9 c_9">
+        <h1>활동 갤러리 📸</h1>
+        <p>에코스텝 크루들이 직접 발로 뛰며 기록한 소중한 플로깅 순간들입니다. 여러분의 멋진 실천도 함께 공유해 주세요!</p>
+
+        <div class="upload-box">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <input type="file" id="photo-upload" name="photo-upload" accept="image/*" style="display: none;">
+                <label for="photo-upload">✨ 플로깅 인증샷 선택하기</label>
+                <p>JPG, PNG, GIF 파일 업로드 가능 / 최대 용량 10MB</p>
+            </form>
+        </div>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img class="gallery-img" src="https://www.chosun.com/resizer/v2/IEOOXWAKJA6CKOAHKNGIXSCTT4.gif?auth=91ab6ac07cd5db35543efac537092d6d9185572cab13d81226fbfa6acda06c3d&width=616" alt="인증샷">
+                <div class="gallery-info">
+                    <div class="gallery-author">🏃🏻‍♂️ 김*재 크루</div>
+                    <div class="gallery-caption">주말 오전 뚝섬 한강공원 돌면서 한 보따리 수거했습니다! 상쾌하네요.</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img class="gallery-img" src="https://www.docdocdoc.co.kr/news/photo/202304/3005068_3005619_4832.jpg" alt="인증샷">
+                <div class="gallery-info">
+                    <div class="gallery-author">🌿 홍*동 크루</div>
+                    <div class="gallery-caption">친구들과 함께 다녀온 남산 둘레길 플로깅! 생각보다 쓰레기가 많아 놀랐어요.</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img class="gallery-img" src="https://cdn.imweb.me/thumbnail/20240305/893496ef3cf09.jpeg" alt="인증샷">
+                <div class="gallery-info">
+                    <div class="gallery-author">🔋 이*경 크루</div>
+                    <div class="gallery-caption">오늘의 탄천 플로깅 완료! 생분해 봉투와 전용 집게가 있으니 든든합니다.</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img class="gallery-img" src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?q=80&w=400" alt="인증샷">
+                <div class="gallery-info">
+                    <div class="gallery-author">🏃🏻‍♀️ 가*다 크루</div>
+                    <div class="gallery-caption">가볍게 뛰면서 지구도 지키는 에코스텝! 다음 주말 동네 크루 모집해요~</div>
+                </div>
+            </div>
+
+        </div>
+        </section>
+
+    <footer class="c_12">
+        COPYRIGHT 2026 Eco-Step ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

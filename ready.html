@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-Step - 필수 준비물</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+body {
+    font-family: 'Pretendard', '맑은 고딕', sans-serif; 
+    font-size: 100%;
+    color: #333333;
+    background-color: #fafafa;
+}
+[class*="c_"] {
+    float: left;
+    padding: 15px; 
+}
+/* 너비가 600픽셀 미만인 스마트폰을 위한 기본 설정 */
+[class*="c_"] {
+    width: 100%;
+}
+/* 너비가 600픽셀 이상인 태블릿 컴퓨터 등 */
+@media only screen and (min-width: 600px) {
+    .c_m_1 {width: 8.33%;}
+    .c_m_2 {width: 16.66%;}
+    .c_m_3 {width: 25%;}
+    .c_m_4 {width: 33.33%;}
+    .c_m_5 {width: 41.66%;}
+    .c_m_6 {width: 50%;}
+    .c_m_7 {width: 58.33%;}
+    .c_m_8 {width: 66.66%;}
+    .c_m_9 {width: 75%;}
+    .c_m_10 {width: 83.33%;}
+    .c_m_11 {width: 91.66%;}
+    .c_m_12 {width: 100%;}
+}
+/* 너비가 768픽셀을 초과하는 데스크톱 컴퓨터 등 */
+@media only screen and (min-width: 768px) {
+    .c_1 {width: 8.33%;}
+    .c_2 {width: 16.66%;}
+    .c_3 {width: 25%;}
+    .c_4 {width: 33.33%;}
+    .c_5 {width: 41.66%;}
+    .c_6 {width: 50%;}
+    .c_7 {width: 58.33%;}
+    .c_8 {width: 66.66%;}
+    .c_9 {width: 75%;}
+    .c_10 {width: 83.33%;}
+    .c_11 {width: 91.66%;}
+    .c_12 {width: 100%;}
+}
+
+header {
+    height: 90px;
+    padding: 0 20px;
+    background-color: #4A7C59; 
+    color: #ffffff;
+
+    display: flex;          
+    align-items: center;    
+    justify-content: flex-start; 
+}
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+aside#menu {
+    color: #2C3E50;
+}
+aside#menu li {
+    padding: 0;
+    margin: 8px 0 0 0;
+    background-color: #E9F5ED;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+aside#menu li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: inherit;
+}
+aside#menu li.active, aside#menu li:hover {
+    background-color: #4A7C59;
+    color: #ffffff;
+}
+section#main {
+    padding: 20px;
+}
+section#main h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+section#main p {
+    padding: 8px 0;
+    font-size: 0.95em;
+    line-height: 160%;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.product-tag {
+    font-size: 0.75rem;
+    color: #4A7C59;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.product-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.product-desc {
+    font-size: 0.85rem;
+    color: #777777;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.4;
+}
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 12px;
+}
+.product-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4A7C59;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.product-btn:hover {
+    background-color: #386144;
+}
+
+footer {
+    height: 70px;
+    padding: 25px 10px;
+    clear: both;
+    background-color: #ececec;
+    color: #777777;
+    font-size: 0.85rem;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <header class="c_12">
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">🏃🏻‍♂️ 플로깅! Eco-Step / 에코스텝</a></h1>
+    </header>
+
+    <aside id="menu" class="c_m_3 c_3">
+        <ul>
+            <li><a href="explain.html">플로깅이란?</a></li>
+            <li class="active"><a href="ready.html">필수 준비물</a></li>
+            <li><a href="course.html">추천 산책로</a></li>
+            <li><a href="facilities.html">편의시설</a></li>
+            <li><a href="gallery.html">활동 갤러리</a></li>
+        </ul>
+    </aside>
+
+    <section id="main" class="c_m_9 c_9">
+        <h1>필수 준비물 🧹</h1>
+        <p>에코스텝이 추천하는 플로깅 필수 장비와 굿즈입니다. 지구를 지키는 발걸음, 가볍고 튼튼한 장비와 함께 시작해보세요!</p>
+
+        <div class="shop-container">
+            
+            <div class="product-card">
+                <img class="product-img" src="https://ae01.alicdn.com/kf/Sf040ccef6d444bbd834136276d6f71ecG.jpg">
+                <div class="product-info">
+                    <span class="product-tag">EQUIPMENT</span>
+                    <h3 class="product-title">쓰레기용 집게</h3>
+                    <p class="product-desc">장시간 조깅에도 손목에 무리가 가지 않는 180g 초경량 설계와 강력한 고정력.</p>
+                    <div class="product-price">14,900원</div>
+                    <button class="product-btn"><a href="https://www.coupang.com/vp/products/9153385246?vendorItemId=93924661097&itemId=26955625220&landingType=SDP" style="text-decoration: none; color: inherit;" target="_blank">구매하러 가기</a></button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img class="product-img" src="https://thumbnail.coupangcdn.com/thumbnails/remote/164x164ex/image/1025_amir_coupang_oct_80k/99d9/d854714d3d653a3fe2dfacc4fbf975149ff85b9a0de3cd9f57e0ec428e7b.jpg">
+                <div class="product-info">
+                    <span class="product-tag">BAG</span>
+                    <h3 class="product-title">쓰레기 비닐 봉투 (27L)</h3>
+                    <p class="product-desc">100% 자연 분해되는 소재로 만든 튼튼하고 넉넉한 플로깅 전용 봉투 (100매입).</p>
+                    <div class="product-price">9,800원</div>
+                    <button class="product-btn"><a href="https://www.coupang.com/vp/products/8863381892?vendorItemId=70713671436&itemId=2723470684&landingType=SDP" style="text-decoration: none; color: inherit;" target="_blank">구매하러 가기</a></button>
+                </div> 
+            </div>
+
+            <div class="product-card">
+                <img class="product-img" src="https://thumbnail.coupangcdn.com/thumbnails/remote/292x292ex/image/retail/images/ebde84c1-e098-4bec-ae1b-99bfa4d1d7496263562088442943442.png">
+                <div class="product-info">
+                    <span class="product-tag">SAFETY</span>
+                    <h3 class="product-title">3M 안전장갑</h3>
+                    <p class="product-desc">날카로운 쓰레기로부터 손을 안전하게 보호하는 안전한 장갑.</p>
+                    <div class="product-price">4,980원</div>
+                    <button class="product-btn"><a href="https://www.coupang.com/vp/products/8530700036?vendorItemId=4035809534&itemId=421067818&landingType=SDP" style="text-decoration: none; color: inherit;" target="_blank">구매하러 가기</a></button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img class="product-img" src="https://shop-phinf.pstatic.net/20260328_141/1774667928148StBPV_JPEG/82044409961915021_1808463605.jpg?type=o1000">
+                <div class="product-info">
+                    <span class="product-tag">GOODS</span>
+                    <h3 class="product-title">Eco-Step DIY 리유저블 텀블러</h3>
+                    <p class="product-desc">플로깅 중 수분 보충을 위한 보온/보냉 완벽 지원! <br>내맘대로 꾸밀 수 있는 에코스텝 시그니처 굿즈.</p>
+                    <div class="product-price">10,080원</div>
+                    <button class="product-btn"><a href="https://smartstore.naver.com/dalbong6699/products/13317457701?nl-ts-pid=jlI1VdqWbNny5ssnfPh-005429&n_media=11068&n_query=%ED%99%98%EA%B2%BD%EB%B3%B4%ED%98%B8%ED%85%80%EB%B8%94%EB%9F%AC&n_rank=2&n_ad_group=grp-a001-02-000000061294228&n_ad=nad-a001-02-000000497420882&n_campaign_type=2&n_mall_id=ncp_i6y4gx_01&n_mall_pid=13317457701&n_ad_group_type=2&n_match=3&NaPm=ct%3Dmpf6ent5%7Cci%3DERa04ebfd6%2D54e7%2D11f1%2D8c7f%2D8290880f7ec1%7Ctr%3Dpla%7Chk%3D3964c6897f893bc9660a325f90c1e18c8e364263%7Cnacn%3DgymUBAxLc2ftA" style="text-decoration: none; color: inherit;" target="_blank">구매하러 가기</a></button>
+                </div>
+            </div>
+
+        </div>
+        </section>
+
+    <footer class="c_12">
+        COPYRIGHT 2026 Eco-Step ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>
